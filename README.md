@@ -180,8 +180,8 @@ Why It's Important:
   ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
   
   5. Deploy Docker Containers with Docker-Compose
-     ```
-    - name: Start Docker Container
+   ```
+- name: Start Docker Container
       hosts: all
       vars_files:
          - vars
@@ -200,7 +200,7 @@ Why It's Important:
     - name: Start Container from compose
       community.docker.docker_compose:
         project_src: /home/ec2-user/
-     ```
+   ```
 What This Does:
 
     Copy Docker-Compose File:
