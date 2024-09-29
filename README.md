@@ -15,38 +15,40 @@
 🌐 Infrastructure Design
 
   VPC:
-          CIDR Block: 10.0.0.0/16
-            Subnets: One subnet with a CIDR block of 10.0.10.0/24 located in the us-east-1a availability zone.
-            Internet Gateway: Attached to allow outbound internet access for instances.
-  
-          EC2 Instance:
-            Instance Type: t2.micro for lightweight operations.
-            AMI: Latest Amazon Linux 2 AMI for compatibility with Docker.
-            Key Pair: SSH access enabled with the specified key pair.
-            Security Groups: Inbound rules for SSH (port 22) and Mongo Express (port 8081).
 
-          Networking:
-            Route Table: Contains routes for internal traffic within the VPC and an internet route via the Internet Gateway.
-            Security Groups: Ensures only necessary traffic (SSH and Mongo Express) is allowed, minimizing the attack surface.  
-        
+    CIDR Block: 10.0.0.0/16
+    Subnets: One subnet with a CIDR block of 10.0.10.0/24 located in the us-east-1a availability zone.
+    Internet Gateway: Attached to allow outbound internet access for instances.
+
+EC2 Instance:
+
+    Instance Type: t2.micro for lightweight operations.
+    AMI: Latest Amazon Linux 2 AMI for compatibility with Docker.
+    Key Pair: SSH access enabled with the specified key pair.
+    Security Groups: Inbound rules for SSH (port 22) and Mongo Express (port 8081).
+
+Networking:
+
+    Route Table: Contains routes for internal traffic within the VPC and an internet route via the Internet Gateway.
+    Security Groups: Ensures only necessary traffic (SSH and Mongo Express) is allowed, minimizing the attack surface.
+    
 📝 Terraform Configuration
 
 VPC, Subnet, and Internet Gateway Setup:
 
-   A VPC is provisioned with a /16 CIDR block for network segmentation.
-   A single subnet with /24 CIDR is created for deploying the EC2 instance.
-   An Internet Gateway is attached to allow outbound traffic, essential for Docker image downloads.
+    A VPC is provisioned with a /16 CIDR block for network segmentation.
+    A single subnet with /24 CIDR is created for deploying the EC2 instance.
+    An Internet Gateway is attached to allow outbound traffic, essential for Docker image downloads.
    
 EC2 Instance with Provisioner for Ansible:
 
-  aws_instance creates an Amazon Linux 2 EC2 instance.
-  
-  The local-exec provisioner runs an Ansible playbook to automate software installation and container orchestration.
+    aws_instance creates an Amazon Linux 2 EC2 instance.
+    The local-exec provisioner runs an Ansible playbook to automate software installation and container orchestration.
 
 Security Group:
 
-  Ingress rules allow SSH access and Mongo Express traffic on ports 22 and 8081 respectively. Egress rules allow outbound traffic.  
-
+    Ingress rules allow SSH access and Mongo Express traffic on ports 22 and 8081 respectively. Egress rules allow outbound traffic.
+    
 🔧 Ansible Playbook: Automated Setup
 
   1. SSH Connection Waiter
