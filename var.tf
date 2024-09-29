@@ -21,5 +21,5 @@ variable instance_type {
 }
 variable ssh_key {
     type = string
-    default = "/home/omar/ansible_terra_project/rhcsa.pem"
+    default = "path/to/your/key"
 }
