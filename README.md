@@ -233,12 +233,12 @@ By automating with Ansible, you streamline the entire deployment process, reduci
 🐳 Docker Compose Services
 MongoDB Service:
 
-  MongoDB is configured with an admin username and password. The database data is stored in a Docker volume for persistence.
+    MongoDB is configured with an admin username and password. The database data is stored in a Docker volume for persistence.
 
 Mongo Express:
 
-  Provides a web interface to manage MongoDB. This service is exposed on port 8081.
-
+    Provides a web interface to manage MongoDB. This service is exposed on port 8081.
+    
 📈 Why Use This Setup?
 
   Scalable and Repeatable: With IaC (Terraform) and configuration management (Ansible), you can easily scale and redeploy this architecture in any AWS region.
