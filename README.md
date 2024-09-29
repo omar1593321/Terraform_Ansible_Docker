@@ -15,19 +15,19 @@
 🌐 Infrastructure Design
 
   VPC:
-        CIDR Block: 10.0.0.0/16
-        Subnets: One subnet with a CIDR block of 10.0.10.0/24 located in the us-east-1a availability zone.
-        Internet Gateway: Attached to allow outbound internet access for instances.
+          CIDR Block: 10.0.0.0/16
+            Subnets: One subnet with a CIDR block of 10.0.10.0/24 located in the us-east-1a availability zone.
+            Internet Gateway: Attached to allow outbound internet access for instances.
+  
+          EC2 Instance:
+            Instance Type: t2.micro for lightweight operations.
+            AMI: Latest Amazon Linux 2 AMI for compatibility with Docker.
+            Key Pair: SSH access enabled with the specified key pair.
+            Security Groups: Inbound rules for SSH (port 22) and Mongo Express (port 8081).
 
-  EC2 Instance:
-        Instance Type: t2.micro for lightweight operations.
-        AMI: Latest Amazon Linux 2 AMI for compatibility with Docker.
-        Key Pair: SSH access enabled with the specified key pair.
-        Security Groups: Inbound rules for SSH (port 22) and Mongo Express (port 8081).
-
-  Networking:
-        Route Table: Contains routes for internal traffic within the VPC and an internet route via the Internet Gateway.
-        Security Groups: Ensures only necessary traffic (SSH and Mongo Express) is allowed, minimizing the attack surface.  
+          Networking:
+            Route Table: Contains routes for internal traffic within the VPC and an internet route via the Internet Gateway.
+            Security Groups: Ensures only necessary traffic (SSH and Mongo Express) is allowed, minimizing the attack surface.  
         
 📝 Terraform Configuration
 
