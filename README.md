@@ -246,8 +246,10 @@ Mongo Express:
   Containerized Deployment: Docker ensures that the services are portable, consistent, and can run on any environment that supports containers.  
 
 A GIF for the final build:
-![ansible-tera](https://github.com/user-attachments/assets/02ab82fa-691f-4c6e-b28d-cb2f965e3881)
+
+![ansible-tera](https://github.com/user-attachments/assets/813d78d7-393d-4032-be15-c8eeea5dbaaa)
 
 Screen shot:
+
 
 ![Screenshot 2024-09-30 022629](https://github.com/user-attachments/assets/5b46b024-971e-4cd5-bc95-bc1797bc61f7)
