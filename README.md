@@ -1,6 +1,9 @@
 Automating AWS Infrastructure with Terraform & Ansible: MongoDB and Mongo Express Deployment
+
 🚀 Project Overview
+
 This project demonstrates how to use Terraform for AWS infrastructure provisioning and Ansible for automated configuration management, deploying a fully functional MongoDB and Mongo Express environment using Docker. The goal is to automate everything—from creating the cloud infrastructure to setting up Docker and running containers—while ensuring a repeatable, scalable process for future projects.
+
 🛠️ Technologies Used
 
   Terraform: Infrastructure as Code (IaC) tool used to define and provision AWS resources.
@@ -26,6 +29,7 @@ This project demonstrates how to use Terraform for AWS infrastructure provisioni
         Security Groups: Ensures only necessary traffic (SSH and Mongo Express) is allowed, minimizing the attack surface.  
         
 📝 Terraform Configuration
+
 VPC, Subnet, and Internet Gateway Setup:
 
    A VPC is provisioned with a /16 CIDR block for network segmentation.
@@ -35,6 +39,7 @@ VPC, Subnet, and Internet Gateway Setup:
 EC2 Instance with Provisioner for Ansible:
 
   aws_instance creates an Amazon Linux 2 EC2 instance.
+  
   The local-exec provisioner runs an Ansible playbook to automate software installation and container orchestration.
 
 Security Group:
@@ -65,7 +70,7 @@ Why It's Important:
   Ensures that Ansible doesn't attempt to run tasks before the EC2 instance is ready to accept connections.
   Prevents playbook failure by handling potential delays in instance startup.
   
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
   
 2. Install Docker, Docker-Compose, and Docker-py
    ```
@@ -114,7 +119,7 @@ Why It's Important:
   Docker and Docker Compose are critical for container orchestration. By automating their installation, you ensure consistency across environments and avoid manual setup     errors.
     Installing the Python libraries (docker and Docker-Compose) makes it possible to programmatically manage Docker containers using Ansible.
     
-      -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
       
 3. Start Docker Service
 ```
@@ -136,7 +141,7 @@ What This Does:
 Why It's Important:
   Ensures that Docker is running so that you can manage containers. This step is essential because Docker doesn’t start automatically after installation.
   
-    -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
     
 4. Add EC2-User to Docker Group
 ```
@@ -166,7 +171,7 @@ Why It's Important:
   Without adding ec2-user to the docker group, you would have to run Docker commands with sudo, which is not ideal for automation.
   Resetting the connection ensures that future Docker commands are run without requiring superuser privileges.
   
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
   
   5. Deploy Docker Containers with Docker-Compose
      ```
@@ -212,12 +217,14 @@ Why It's Important:
 Summary of Ansible Automation
 
   Hands-Off Approach: Once your Terraform provisions the infrastructure, Ansible takes over, ensuring the required software (Docker) is installed and configured.
+  
   Consistency: Every time you run this playbook, the same steps are applied, ensuring a predictable setup.
+  
   Efficiency: You don’t need to manually SSH into your EC2 instance to install Docker, start services, or manage containers—Ansible handles all of it.
 
 By automating with Ansible, you streamline the entire deployment process, reducing manual work and ensuring consistency in your cloud environment.    
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
 🐳 Docker Compose Services
 MongoDB Service:
