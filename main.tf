@@ -3,8 +3,6 @@ provider "aws" {
 }
 
 
-# variable my_ip {}
-
 data "aws_ami" "amazon-linux-image" {
   most_recent = true
   owners      = ["amazon"]
