@@ -1,4 +1,4 @@
-**Automating AWS Infrastructure with Terraform & Ansible: MongoDB and Mongo Express Deployment
+**Automating AWS Infrastructure with Terraform & Ansible: MongoDB and Mongo Express Deployment**
 
 🚀 Project Overview
 
