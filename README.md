@@ -2,14 +2,15 @@
 
 🚀 Project Overview
 
-This project demonstrates how to use Terraform for AWS infrastructure provisioning and Ansible for automated configuration management, deploying a fully functional MongoDB and Mongo Express environment using Docker. The goal is to automate everything—from creating the cloud infrastructure to setting up Docker and running containers—while ensuring a repeatable, scalable process for future projects.
+  This project demonstrates how to use Terraform for AWS infrastructure provisioning and Ansible for automated configuration management, deploying a fully functional MongoDB   and Mongo Express environment using Docker. 
+  The goal is to automate everything—from creating the cloud infrastructure to setting up Docker and running containers—while ensuring a repeatable, scalable process for       future projects.
 
 🛠️ Technologies Used
 
-  Terraform: Infrastructure as Code (IaC) tool used to define and provision AWS resources.
-  Ansible: Used for post-provisioning tasks like installing Docker and configuring the application environment.
-  Docker: Containerization platform used to run MongoDB and Mongo Express services.
-  AWS: Cloud platform where resources such as EC2 instances, VPCs, and security groups are created.
+    Terraform: Infrastructure as Code (IaC) tool used to define and provision AWS resources.
+    Ansible: Used for post-provisioning tasks like installing Docker and configuring the application environment.
+    Docker: Containerization platform used to run MongoDB and Mongo Express services.
+    AWS: Cloud platform where resources such as EC2 instances, VPCs, and security groups are created.
 
 🌐 Infrastructure Design
 
