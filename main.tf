@@ -100,10 +100,6 @@ resource "aws_route_table_association" "a-rtb-subnet" {
   route_table_id = aws_route_table.myapp-route-table.id
 }
 
-# resource "aws_key_pair" "ssh-key" {
-#   key_name   = "rhcsa"
-#   public_key = file(var.ssh_key)
-# }
 
 output "server-ip" {
     value = aws_instance.myapp-server.public_ip
