@@ -194,7 +194,7 @@ Why It's Important:
     - name: Docker Login
       community.docker.docker_login:
         registry_url: https://index.docker.io/v1/
-        username: omar1593321
+        username: "your username"
         password: "{{docker_password}}"
         
     - name: Start Container from compose
